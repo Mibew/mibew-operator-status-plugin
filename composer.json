@@ -1,0 +1,15 @@
+{
+  "name": "everyx/mibew-operator-status-plugin",
+  "description": "An operator status plugin for Mibew 2.0.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "everyx",
+      "email": "lunt.luo@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-0": {"Everyx\\Mibew\\Plugin\\OperatorStatus\\": ""}
+  },
+  "target-dir": "Everyx/Mibew/Plugin/OperatorStatus"
+}
