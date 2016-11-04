@@ -51,6 +51,8 @@ class OperatorStatusController extends AbstractController
                 $is_online = "true";
             }
         }
-        return new Response($is_online);
+        $response = new Response($is_online);
+        $response->headers->set('Access-Control-Allow-Origin', '*');
+        return $response;
     }
 }
