@@ -46,9 +46,15 @@ class OperatorStatusController extends AbstractController
 
         $opcode = $request->query->get('code', false);
         $online_operators = get_online_operators();
-        foreach ($online_operators as $item) {
-            if ($item['code'] == $opcode) {
+        if (count($online_operators) > 0) {
+            if (empty($opcode)) {
                 $is_online = "true";
+            } else {
+                foreach ($online_operators as $item) {
+                    if ($item['code'] == $opcode) {
+                        $is_online = "true";
+                    }
+                }
             }
         }
         $response = new Response($is_online);
