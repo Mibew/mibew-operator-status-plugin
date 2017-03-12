@@ -3,7 +3,7 @@ Plugin for Mibew, get statement based on the availability of operators.
 
 # Useage
 
-Request `<MIBEW-BASE-URL>/opstatus?code=<OPERATOR-CODE>`, your will get `true` when operator
+Request `<MIBEW-BASE-URL>/opstatus/<OPERATOR-CODE>`, your will get `true` when operator
 is online or `false` when operator is offline.
 
 # Install

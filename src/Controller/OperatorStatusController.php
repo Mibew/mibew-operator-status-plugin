@@ -42,21 +42,23 @@ class OperatorStatusController extends AbstractController
     */
     public function indexAction(Request $request)
     {
-        $is_online = "false";
+        $is_online = "true";
 
-        $opcode = $request->query->get('code', false);
+        $opcode = $request->attributes->get('opcode');
         $online_operators = get_online_operators();
-        if (count($online_operators) > 0) {
-            if (empty($opcode)) {
-                $is_online = "true";
-            } else {
-                foreach ($online_operators as $item) {
-                    if ($item['code'] == $opcode) {
-                        $is_online = "true";
-                    }
+        
+        if ( count($online_operators) == 0 ) {
+            $is_online = "false";
+        } else if ( !empty($opcode) ) {
+            $is_online = "false";
+            foreach ($online_operators as $item) {
+                if ($item['code'] == $opcode) {
+                    $is_online = "true";
+                    break;
                 }
             }
         }
+
         $response = new Response($is_online);
         $response->headers->set('Access-Control-Allow-Origin', '*');
         return $response;
