@@ -8,11 +8,7 @@ is online or `false` when operator is offline.
 
 # Install
 
-1. Get the archive with the plugin sources from link bellow:
-
- * [mibew-operator-status-plugin.tar.gz](archive/mibew-operator-status-plugin.tar.gz)
-
- * [mibew-operator-status-plugin.zip](archive/mibew-operator-status-plugin.zip)
+1. Get the archive with the plugin sources from [release page](https://github.com/everyx/mibew-operator-status-plugin/releases):
 
 2. Untar/unzip the plugin's archive.
 

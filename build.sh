@@ -1,9 +1,22 @@
 #!/bin/bash
 
-plugin_root_dir='Everyx'
-plugin_target_dir="$plugin_root_dir/Mibew/Plugin/OperatorStatus"
-mkdir -p $plugin_target_dir
-cp -R src/* $plugin_target_dir
-tar -czvf archive/mibew-operator-status-plugin.tar.gz $plugin_root_dir
-zip -r archive/mibew-operator-status-plugin.zip $plugin_root_dir
+author='Everyx'
+
+tmp_dir='/tmp'
+working_dir=`echo $PWD`
+
+target_dir="$tmp_dir/$author/Mibew/Plugin/OperatorStatus"
+mkdir -p $target_dir
+
+shopt -s extglob
+cp -R !(*.sh) $target_dir
+shopt -u extglob
+
+version=`cat Plugin.php|grep -Po "(?<=return ')(\d.){2}\d{1}"`
+
+cd $tmp_dir
+
+tar -czvf $working_dir/mibew-operator-status-plugin.$version.tar.gz $author
+zip -r $working_dir/mibew-operator-status-plugin.$version.zip $author
+
 rm -rf $plugin_root_dir

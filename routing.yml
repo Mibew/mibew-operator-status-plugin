@@ -1,4 +1,4 @@
-mibew_boilerplate_hello:
+everyx_operator_status:
   path: /opstatus/{opcode}
   defaults:
     _controller: Everyx\Mibew\Plugin\OperatorStatus\Controller\OperatorStatusController::indexAction
