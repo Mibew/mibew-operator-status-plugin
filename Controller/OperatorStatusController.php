@@ -28,6 +28,7 @@ namespace Everyx\Mibew\Plugin\OperatorStatus\Controller;
 use Mibew\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
 * Operator Status actions
@@ -37,30 +38,58 @@ class OperatorStatusController extends AbstractController
     /**
     * Returns true or false of whether an operator is online or not.
     *
-    * @param Request $request
+    * @param  Request  $request
     * @return Response Rendered page content
     */
-    public function indexAction(Request $request)
+    public function isOperatorOnlineAction(Request $request)
     {
-        $is_online = "true";
+        $is_online = false;
 
         $opcode = $request->attributes->get('opcode');
         $online_operators = get_online_operators();
-        
-        if ( count($online_operators) == 0 ) {
-            $is_online = "false";
-        } else if ( !empty($opcode) ) {
-            $is_online = "false";
-            foreach ($online_operators as $item) {
-                if ($item['code'] == $opcode) {
-                    $is_online = "true";
-                    break;
-                }
+        foreach ($online_operators as $item) {
+            if ($opcode == $item['code']) {
+                $is_online = true;
+                break;
             }
         }
 
-        $response = new Response($is_online);
-        $response->headers->set('Access-Control-Allow-Origin', '*');
+        $callback = $request->query->get('callback');
+        return $this->prepareResponse($is_online, $callback);
+    }
+
+    /**
+    * Returns true or false of whether an operator is online or not.
+    *
+    * @param  Request  $request
+    * @return Response Rendered page content
+    */
+    public function hasOnlineOperatorsAction(Request $request)
+    {
+        $is_online = has_online_operators();
+
+        $callback = $request->query->get('callback');
+        return $this->prepareResponse($is_online, $callback);
+    }
+
+    /**
+    * Returns prepared response: JSONP or plain text.
+    *
+    * @param  Boolean  $is_online
+    * @param  String   $callback
+    * @return Response Rendered page content
+    */
+    private function prepareResponse($is_online, $callback) {
+        $response = NULL;
+
+        if ( empty($callback) ) {
+            $response = new Response( $is_online ? 'true' : 'false' );
+            $response->headers->set('Access-Control-Allow-Origin', '*');
+        } else {
+            $response = new JsonResponse($is_online);
+            $response->setCallback($callback);
+        }
+
         return $response;
     }
 }

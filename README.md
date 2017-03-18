@@ -3,8 +3,28 @@ Plugin for Mibew, get statement based on the availability of operators.
 
 # Useage
 
-Request `<MIBEW-BASE-URL>/opstatus/<OPERATOR-CODE>`, your will get `true` when operator
-is online or `false` when operator is offline.
+1. Get any operators online status:
+ 
+    * request URL:`<MIBEW-BASE-URL>/opstatus`.
+    * return `true` when any operators is online and `false` when not.
+
+2. Get an operator online status by operator code:
+
+    * Request URL: `<MIBEW-BASE-URL>/opstatus/<OPERATOR-CODE>`.
+    * return `true` when operator is online or `false` when not.
+
+3. Use callback parameter:
+
+    Just inset `<script>` tag and set `src` to URL above and add `callback` parameter
+    
+    * `<MIBEW-BASE-URL>/opstatus?callback=<CALLBACK_FUNCTION>`
+    * `<MIBEW-BASE-URL>/opstatus/<OPERATOR-CODE>?callback=<CALLBACK_FUNCTION>`
+    
+    will return bellow and run `CALLBACK_FUNCTION` automatically.
+
+    ```javascript
+    /**/CALLBACK_FUNCTION(status);
+    ```
 
 # Install
 
