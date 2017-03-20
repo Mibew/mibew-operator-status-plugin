@@ -53,6 +53,16 @@ plugins:
 ...
 ```
 
+# Build from sources
+
+1. Obtain a copy of the repository using `git clone`, download button, or another way.
+2. Install [node.js](http://nodejs.org/) and [npm](https://www.npmjs.org/).
+3. Install [Gulp](http://gulpjs.com/).
+4. Install npm dependencies using `npm install`.
+5. Run Gulp to build the sources using `gulp default`.
+
+Finally `.tar.gz` and `.zip` archives of the ready-to-use Plugin will be available in release directory.
+
 # License
 
 [MIT](LICENSE)
