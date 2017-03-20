@@ -1,9 +1,9 @@
-everyx_operator_status_has_online_operators:
+mibew_operator_status_has_online_operators:
   path: /opstatus
   defaults:
-    _controller: Everyx\Mibew\Plugin\OperatorStatus\Controller\OperatorStatusController::hasOnlineOperatorsAction
+    _controller: Mibew\Mibew\Plugin\OperatorStatus\Controller\OperatorStatusController::hasOnlineOperatorsAction
 
-everyx_operator_status_is_operator_online:
+mibew_operator_status_is_operator_online:
   path: /opstatus/{opcode}
   defaults:
-    _controller: Everyx\Mibew\Plugin\OperatorStatus\Controller\OperatorStatusController::isOperatorOnlineAction
+    _controller: Mibew\Mibew\Plugin\OperatorStatus\Controller\OperatorStatusController::isOperatorOnlineAction

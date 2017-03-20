@@ -23,7 +23,7 @@
  * SOFTWARE.
  */
 
-namespace Everyx\Mibew\Plugin\OperatorStatus;
+namespace Mibew\Mibew\Plugin\OperatorStatus;
 
 /**
  * Main plugin class.
