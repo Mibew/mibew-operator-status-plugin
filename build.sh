@@ -1,6 +1,6 @@
 #!/bin/bash
 
-author='Everyx'
+author='Mibew'
 
 tmp_dir='/tmp'
 working_dir=`echo $PWD`

@@ -23,7 +23,7 @@
 * SOFTWARE.
 */
 
-namespace Everyx\Mibew\Plugin\OperatorStatus\Controller;
+namespace Mibew\Mibew\Plugin\OperatorStatus\Controller;
 
 use Mibew\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
