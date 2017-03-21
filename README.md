@@ -1,4 +1,4 @@
-# mibew-operator-status-plugin
+# Mibew Operator Status plugin
 Plugin for Mibew, get statement based on the availability of operators.
 
 # Useage
