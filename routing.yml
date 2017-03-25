@@ -3,6 +3,11 @@ mibew_operator_status_has_online_operators:
   defaults:
     _controller: Mibew\Mibew\Plugin\OperatorStatus\Controller\OperatorStatusController::hasOnlineOperatorsAction
 
+mibew_operator_status_has_online_group_operators:
+  path: /opstatus/group/{group_id}
+  defaults:
+    _controller: Mibew\Mibew\Plugin\OperatorStatus\Controller\OperatorStatusController::isOperatorGroupOnlineAction
+
 mibew_operator_status_is_operator_online:
   path: /opstatus/{opcode}
   defaults:

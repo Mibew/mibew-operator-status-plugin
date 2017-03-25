@@ -59,7 +59,7 @@ class OperatorStatusController extends AbstractController
     }
 
     /**
-    * Returns true or false of whether an operator is online or not.
+    * Returns true or false of whether any operators is online or not.
     *
     * @param  Request  $request
     * @return Response Rendered page content
@@ -67,6 +67,25 @@ class OperatorStatusController extends AbstractController
     public function hasOnlineOperatorsAction(Request $request)
     {
         $is_online = has_online_operators();
+
+        $callback = $request->query->get('callback');
+        return $this->prepareResponse($is_online, $callback);
+    }
+
+    /**
+    * Returns true or false of whether any operators in specificed group is online or not.
+    *
+    * @param  Request  $request
+    * @return Response Rendered page content
+    */
+    public function isOperatorGroupOnlineAction(Request $request)
+    {
+        $is_online = false;
+
+        $group_id = $request->attributes->get('group_id');
+        if (Settings::get('enablegroups') == '1') {
+            $is_online = has_online_operators($group_id);
+        }
 
         $callback = $request->query->get('callback');
         return $this->prepareResponse($is_online, $callback);
