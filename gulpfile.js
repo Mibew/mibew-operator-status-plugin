@@ -11,9 +11,9 @@ gulp.task('prepare-release', function() {
 
     return eventStream.merge(
         getSources()
-            .pipe(zip('mibew-operator-status-plugin-' + version + '.zip')),
+            .pipe(zip('operator-status-plugin-' + version + '.zip')),
         getSources()
-            .pipe(tar('mibew-operator-status-plugin-' + version + '.tar'))
+            .pipe(tar('operator-status-plugin-' + version + '.tar'))
             .pipe(gzip())
     )
     .pipe(chmod(0644))

@@ -1,4 +1,4 @@
-# mibew-operator-status-plugin
+# Mibew Operator Status plugin
 Plugin for Mibew, get statement based on the availability of operators.
 
 # Useage
@@ -28,7 +28,7 @@ Plugin for Mibew, get statement based on the availability of operators.
 
 # Install
 
-1. Get the archive with the plugin sources from [release page](https://github.com/everyx/mibew-operator-status-plugin/releases):
+1. Get the archive with the plugin sources. You can download it from the [official site](https://mibew.org/plugins#mibew-operator-status) or build the plugin from sources.
 
 2. Untar/unzip the plugin's archive.
 
