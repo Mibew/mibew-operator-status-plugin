@@ -25,6 +25,7 @@
 
 namespace Mibew\Mibew\Plugin\OperatorStatus\Controller;
 
+use Mibew\Settings;
 use Mibew\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
