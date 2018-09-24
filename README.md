@@ -1,7 +1,7 @@
 # Mibew Operator Status plugin
 Plugin for Mibew, get statement based on the availability of operators.
 
-# Useage
+# Usage
 
 1. Get any operators online status:
  
