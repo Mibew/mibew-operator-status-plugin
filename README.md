@@ -20,7 +20,7 @@ Plugin for Mibew, get statement based on the availability of operators.
 
 4. Use callback parameter:
 
-    Just inset `<script>` tag and set `src` to URL above and add `callback` parameter
+    Just insert `<script>` tag and set `src` to URL above and add `callback` parameter
     
     * `<MIBEW-BASE-URL>/opstatus?callback=<CALLBACK_FUNCTION>`
     * `<MIBEW-BASE-URL>/opstatus/<OPERATOR-CODE>?callback=<CALLBACK_FUNCTION>`
